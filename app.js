@@ -187,4 +187,11 @@ document.addEventListener('DOMContentLoaded', () => {
             else playSlideshow();
         }
     });
+
+    // Pause slideshow and BGM when page is hidden (tab switched, minimized, or screen locked on mobile)
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            pauseSlideshow();
+        }
+    });
 });
