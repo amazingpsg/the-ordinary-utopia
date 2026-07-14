@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>산문시 1 - 신동엽</title>
+    <!-- Google Fonts for BATANG -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for control icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background sunset glow -->
+    <div class="sunset-glow-bg"></div>
+
+    <!-- Start Overlay (Browser autoplay workaround) -->
+    <div class="start-overlay" id="startOverlay">
+        <div class="start-card">
+            <h1 class="overlay-title">산문시 1</h1>
+            <p class="overlay-author">신동엽</p>
+            <button class="start-btn" id="startBtn">
+                <i class="fa-solid fa-play"></i> 시 감상 시작하기
+            </button>
+            <p class="overlay-info">※ 시작하면 잔잔한 음악과 함께 시가 흘러나옵니다.</p>
+        </div>
+    </div>
+
+    <!-- Audio element for BGM (Looking for bgm.mp3 in the project directory) -->
+    <audio id="bgmAudio" src="bgm.mp3" loop></audio>
+
+    <!-- Main Container -->
+    <main class="slideshow-container">
+        
+        <!-- Slides (8 pages only, centered and keeping 16:9 aspect ratio) -->
+        <div class="slide-wrapper" id="slideWrapper">
+            <div class="slide-item active" data-index="0">
+                <img src="assets/page1.jpg" alt="구절 1" class="slide-img">
+            </div>
+            <div class="slide-item" data-index="1">
+                <img src="assets/page2.jpg" alt="구절 2" class="slide-img">
+            </div>
+            <div class="slide-item" data-index="2">
+                <img src="assets/page3.jpg" alt="구절 3" class="slide-img">
+            </div>
+            <div class="slide-item" data-index="3">
+                <img src="assets/page4.jpg" alt="구절 4" class="slide-img">
+            </div>
+            <div class="slide-item" data-index="4">
+                <img src="assets/page5.jpg" alt="구절 5" class="slide-img">
+            </div>
+            <div class="slide-item" data-index="5">
+                <img src="assets/page6.jpg" alt="구절 6" class="slide-img">
+            </div>
+            <div class="slide-item" data-index="6">
+                <img src="assets/page7.jpg" alt="구절 7" class="slide-img">
+            </div>
+            <div class="slide-item" data-index="7">
+                <img src="assets/page8.jpg" alt="구절 8" class="slide-img">
+            </div>
+        </div>
+
+        <!-- Controls panel (Bottom overlay) -->
+        <div class="control-panel">
+            <div class="control-left">
+                <button class="control-btn" id="playPauseBtn" title="일시정지/재생">
+                    <i class="fa-solid fa-pause"></i>
+                </button>
+                <button class="control-btn" id="audioToggleBtn" title="배경음악 음소거">
+                    <i class="fa-solid fa-volume-high"></i>
+                </button>
+            </div>
+
+            <!-- Slide counter & progress bar -->
+            <div class="control-center">
+                <span class="slide-counter" id="slideCounter">1 / 8</span>
+                <div class="slide-progress-container">
+                    <div class="slide-progress-bar" id="slideProgressBar"></div>
+                </div>
+            </div>
+
+            <div class="control-right">
+                <button class="control-btn" id="prevBtn" title="이전 그림"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="control-btn" id="nextBtn" title="다음 그림"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
